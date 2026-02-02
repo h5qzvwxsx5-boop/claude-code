@@ -119,6 +119,138 @@ Die richtige Anzahl von Agenten ist wie bei einem Projektteam: So wenig wie mög
 
 ---
 
+## Wie baut man einen optimalen Agenten?
+
+Ob einzeln oder im Team - jeder Agent folgt dem gleichen Bauplan. Das Geheimnis liegt in der klaren Struktur.
+
+### Die Anatomie eines Agenten
+
+Ein Agent besteht aus vier Elementen:
+
+1. **Identität** - Name und wann er zum Einsatz kommt
+2. **Werkzeuge** - Was darf er benutzen?
+3. **Fähigkeiten** - Welches Modell steckt dahinter?
+4. **Persönlichkeit** - Der System-Prompt, das Herzstück
+
+### Der System-Prompt: Das Herzstück
+
+Der System-Prompt ist wie eine Stellenbeschreibung für den Agenten. Die optimale Struktur:
+
+**1. Rolle definieren**
+> "Du bist ein Experte für [Fachgebiet] mit Spezialisierung auf [Kernkompetenz]."
+
+**2. Aufgaben auflisten**
+- Hauptaufgabe klar benennen
+- Nebenaufgaben priorisieren
+- Grenzen setzen (was gehört NICHT dazu)
+
+**3. Prozess beschreiben**
+Schritt für Schritt, wie der Agent vorgehen soll:
+1. Erst X tun
+2. Dann Y prüfen
+3. Schließlich Z liefern
+
+**4. Qualitätsstandards festlegen**
+- Was ist ein gutes Ergebnis?
+- Welche Kriterien müssen erfüllt sein?
+
+**5. Ausgabeformat vorgeben**
+- Wie soll das Ergebnis aussehen?
+- Welche Struktur wird erwartet?
+
+**6. Sonderfälle behandeln**
+- Was tun bei Unklarheiten?
+- Wie mit Fehlern umgehen?
+
+### Die vier Agent-Typen
+
+| Typ | Aufgabe | Beispiel-Einsatz |
+|-----|---------|------------------|
+| **Analyse** | Untersuchen & Verstehen | Code-Review, Datenanalyse |
+| **Generierung** | Erstellen & Produzieren | Texte schreiben, Code generieren |
+| **Validierung** | Prüfen & Bewerten | Qualitätskontrolle, Compliance-Check |
+| **Orchestrierung** | Koordinieren & Steuern | Workflow-Management |
+
+### Die goldenen Regeln
+
+**Machen:**
+- Spezifisch sein statt vage
+- Klare Schritte vorgeben
+- Ausgabeformat definieren
+- Sonderfälle bedenken
+
+**Vermeiden:**
+- "Sei hilfreich" (zu vage)
+- Zu viele Werkzeuge geben
+- Prozessschritte weglassen
+- Ausgabeformat offen lassen
+
+### Das Prinzip der minimalen Rechte
+
+Jeder Agent bekommt nur die Werkzeuge, die er wirklich braucht:
+
+| Agent-Typ | Empfohlene Werkzeuge |
+|-----------|---------------------|
+| Analyse | Nur Lesen und Suchen |
+| Generierung | Lesen und Schreiben |
+| Testing | Lesen und Ausführen |
+
+Weniger ist mehr: Ein Agent mit eingeschränkten Rechten kann weniger Schaden anrichten.
+
+---
+
+## Praktische Anwendungsfälle
+
+### Für Unternehmen
+
+**Software-Entwicklung:**
+- Code-Review mit parallelen Prüfern (Bugs, Sicherheit, Stil)
+- Feature-Entwicklung: Explorer → Architekt → Implementierer → Reviewer
+
+**Kundenservice:**
+- Agent 1 kategorisiert die Anfrage
+- Agent 2 durchsucht die Wissensdatenbank
+- Agent 3 formuliert die Antwort
+- Agent 4 prüft auf Compliance
+
+**Recruiting:**
+- Lebenslauf-Analyse parallel zur Stellenprofil-Prüfung
+- Ranking mit Begründung als Ergebnis
+
+**Content-Erstellung:**
+- Recherche → Entwurf → Korrektur → Faktencheck
+- Jeder Schritt von einem Spezialisten
+
+**Compliance & Audit:**
+- Mehrere unabhängige Prüfungen
+- Nur Findings mit hoher Confidence melden
+- Dokumentation automatisch erstellen
+
+### Für Privatpersonen
+
+Auch im privaten Bereich kann Multi-Agent sinnvoll sein - bei wichtigen Entscheidungen:
+
+| Anwendung | Agent-Setup |
+|-----------|-------------|
+| **Reiseplanung** | Flug + Hotel + Aktivitäten parallel recherchieren |
+| **Hauskauf** | Markt + Finanzierung + Rechtliches prüfen |
+| **Lernen** | Erklärer + Übungsleiter + Prüfungssimulator |
+| **Große Käufe** | Recherche + Preisvergleich + Bewertungsanalyse |
+
+**Aber Vorsicht:** Für alltägliche Fragen reicht ein einzelner Agent völlig aus. Multi-Agent lohnt sich erst bei komplexen, wichtigen Entscheidungen.
+
+### Die Entscheidungshilfe
+
+```
+Einzelne Perspektive reicht?     → Single-Agent
+Mehrere unabhängige Prüfungen?   → Multi-Agent
+Aufgabe parallelisierbar?        → Multi-Agent (schneller)
+Hohe Fehlerkosten?               → Multi-Agent (Redundanz)
+Einfache Routineaufgabe?         → Single-Agent
+```
+
+---
+
 ## Was können wir daraus lernen?
 
 ### Für Unternehmen:
