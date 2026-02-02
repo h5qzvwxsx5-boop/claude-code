@@ -1,0 +1,93 @@
+# Wie Claude Code Agentensysteme baut: Erkenntnisse aus dem Quellcode
+
+## Das Wichtigste in Kürze
+
+Claude Code verwendet ein modulares System, bei dem spezialisierte KI-Agenten wie Experten in einem Team zusammenarbeiten. Jeder Agent hat eine klar definierte Rolle und Fähigkeiten - genau wie in einem gut organisierten Unternehmen.
+
+---
+
+## Was ist ein Agent?
+
+Ein Agent ist eine spezialisierte KI-Einheit mit einem bestimmten Auftrag. Stell dir vor: Statt eines Alleskönners gibt es Spezialisten für verschiedene Aufgaben.
+
+**Beispiele:**
+- Ein **Code-Explorer** analysiert bestehenden Code und versteht, wie alles zusammenhängt
+- Ein **Code-Architekt** entwirft neue Funktionen und plant deren Umsetzung
+- Ein **Code-Reviewer** prüft die Qualität und findet potenzielle Fehler
+
+---
+
+## Das Geheimnis: Einfache Textdateien
+
+Überraschend: Agenten werden nicht durch komplexen Code definiert, sondern durch einfache Textdateien. Jede Datei enthält:
+
+1. **Name und Beschreibung** - Wer bin ich und wann werde ich gebraucht?
+2. **Werkzeuge** - Was darf ich benutzen? (Dateien lesen, schreiben, suchen...)
+3. **Persönlichkeit** - Wie soll ich denken und arbeiten?
+
+Das macht das System extrem flexibel: Neue Agenten können in Minuten erstellt werden, ohne eine Zeile Code zu schreiben.
+
+---
+
+## Teamwork: Wie Agenten zusammenarbeiten
+
+Das Besondere an Claude Code ist die Orchestrierung. Mehrere Agenten arbeiten koordiniert an einer Aufgabe:
+
+### Ein Beispiel: Neue Funktion entwickeln
+
+**Phase 1:** Mehrere Explorer-Agenten analysieren parallel den bestehenden Code
+↓
+**Phase 2:** Ein Architekt-Agent entwirft basierend auf den Erkenntnissen verschiedene Lösungsansätze
+↓
+**Phase 3:** Nach der Implementierung prüfen Review-Agenten die Qualität
+
+Das Ergebnis: Schnellere, gründlichere Arbeit durch Parallelisierung und Spezialisierung.
+
+---
+
+## Sicherheit durch Einschränkung
+
+Ein kluges Prinzip: Jeder Agent bekommt nur die Werkzeuge, die er wirklich braucht.
+
+- Ein **Analyse-Agent** kann nur lesen - nicht schreiben oder löschen
+- Ein **Generator-Agent** kann schreiben, aber keine Systembefehle ausführen
+- Kritische Operationen erfordern speziell autorisierte Agenten
+
+Das minimiert Risiken und verhindert unbeabsichtigte Änderungen.
+
+---
+
+## Qualitätskontrolle eingebaut
+
+Besonders clever: Agenten bewerten ihre eigene Sicherheit. Der Code-Reviewer zum Beispiel meldet nur Probleme, bei denen er sich zu mindestens 80% sicher ist.
+
+Das bedeutet:
+- Weniger Fehlalarme
+- Fokus auf echte Probleme
+- Vertrauen in die Ergebnisse
+
+---
+
+## Was können wir daraus lernen?
+
+### Für Unternehmen:
+- **Spezialisierung schlägt Generalismus** - Definierte Rollen führen zu besseren Ergebnissen
+- **Einfachheit gewinnt** - Textbasierte Konfiguration statt komplexer Programmierung
+- **Sicherheit durch Design** - Berechtigungen von Anfang an einschränken
+
+### Für die KI-Entwicklung:
+- **Modulare Architekturen** ermöglichen schnelle Anpassungen
+- **Orchestrierung** ist der Schlüssel zu komplexen Aufgaben
+- **Selbstbewertung** erhöht die Zuverlässigkeit
+
+---
+
+## Fazit
+
+Claude Code zeigt, wie moderne KI-Systeme gebaut werden können: Nicht als monolithische Superintelligenz, sondern als Team spezialisierter Agenten, die koordiniert zusammenarbeiten.
+
+Das Prinzip ist übertragbar auf viele Bereiche - von der Softwareentwicklung bis zum Projektmanagement. Die Zukunft gehört nicht dem einen Alleskönner, sondern dem gut orchestrierten Team von Spezialisten.
+
+---
+
+*Basierend auf der Analyse des Claude Code Repositories von Anthropic.*
