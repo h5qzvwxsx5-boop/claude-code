@@ -251,6 +251,227 @@ Einfache Routineaufgabe?         → Single-Agent
 
 ---
 
+## Beispiel: Multi-Agent-System für Reiseplanung
+
+Um die Konzepte greifbar zu machen, hier ein vollständiges Beispiel - ein Agentensystem, das eine Reise plant.
+
+### Die Ausgangssituation
+
+**Anfrage:** "Plane einen 10-tägigen Italien-Urlaub für 2 Personen im September. Budget: 3.000€. Wir mögen Kultur, gutes Essen und wollen nicht nur Touristenfallen sehen."
+
+### Das Team: 5 spezialisierte Agenten
+
+#### Agent 1: Der Reise-Analyst
+
+**Rolle:** Versteht die Anfrage und extrahiert die wichtigen Parameter.
+
+**System-Prompt (vereinfacht):**
+> Du bist ein erfahrener Reiseberater, der Kundenanfragen analysiert.
+>
+> **Deine Aufgaben:**
+> 1. Extrahiere alle relevanten Parameter (Ziel, Dauer, Budget, Präferenzen)
+> 2. Identifiziere implizite Wünsche ("nicht nur Touristenfallen" = Geheimtipps gewünscht)
+> 3. Erkenne fehlende Informationen und formuliere Rückfragen
+>
+> **Ausgabeformat:**
+> - Reiseziel: [Land/Region]
+> - Zeitraum: [Daten]
+> - Budget: [Betrag] für [was alles]
+> - Prioritäten: [Liste]
+> - Offene Fragen: [Falls vorhanden]
+
+**Werkzeuge:** Keine (reiner Analyse-Agent)
+
+---
+
+#### Agent 2: Der Flug-Spezialist
+
+**Rolle:** Findet die besten Flugverbindungen.
+
+**System-Prompt (vereinfacht):**
+> Du bist ein Experte für Flugbuchungen mit Fokus auf Preis-Leistung.
+>
+> **Deine Aufgaben:**
+> 1. Recherchiere Flugoptionen für die gegebenen Parameter
+> 2. Vergleiche Direktflüge vs. Umsteigeverbindungen
+> 3. Berücksichtige Gepäckregeln und versteckte Kosten
+> 4. Empfehle die beste Option mit Begründung
+>
+> **Qualitätsstandards:**
+> - Mindestens 3 Optionen vergleichen
+> - Gesamtkosten inkl. aller Gebühren angeben
+> - Flugzeiten und Umsteigezeiten berücksichtigen
+>
+> **Ausgabeformat:**
+> Top-Empfehlung: [Airline, Preis, Zeiten]
+> Alternative 1: [...]
+> Alternative 2: [...]
+> Begründung: [Warum die Top-Empfehlung]
+
+**Werkzeuge:** Web-Suche, Preisvergleich-APIs
+
+---
+
+#### Agent 3: Der Unterkunfts-Experte
+
+**Rolle:** Findet passende Hotels und Unterkünfte.
+
+**System-Prompt (vereinfacht):**
+> Du bist ein Unterkunfts-Spezialist mit Fokus auf authentische Erlebnisse.
+>
+> **Deine Aufgaben:**
+> 1. Finde Unterkünfte, die zum Reisestil passen
+> 2. Bevorzuge lokale Alternativen zu großen Ketten
+> 3. Achte auf Lage (Nähe zu Sehenswürdigkeiten, aber ruhig)
+> 4. Prüfe echte Bewertungen auf wiederkehrende Probleme
+>
+> **Qualitätsstandards:**
+> - Mindestens 4,5 Sterne Durchschnittsbewertung
+> - Preis pro Nacht transparent angeben
+> - Stornierungsbedingungen prüfen
+>
+> **Sonderfälle:**
+> - Bei knappem Budget: Apartments statt Hotels vorschlagen
+> - Bei Kulturinteresse: Unterkünfte in historischen Gebäuden bevorzugen
+
+**Werkzeuge:** Web-Suche, Booking-Plattformen
+
+---
+
+#### Agent 4: Der Aktivitäten-Kurator
+
+**Rolle:** Stellt das Erlebnisprogramm zusammen.
+
+**System-Prompt (vereinfacht):**
+> Du bist ein lokaler Insider, der authentische Erlebnisse kuratiert.
+>
+> **Deine Aufgaben:**
+> 1. Erstelle einen ausgewogenen Mix aus Kultur, Kulinarik und Erholung
+> 2. Finde Geheimtipps abseits der Touristenpfade
+> 3. Plane realistische Tagesabläufe (nicht überladen)
+> 4. Berücksichtige Öffnungszeiten und Reservierungspflichten
+>
+> **Qualitätsstandards:**
+> - Maximal 2-3 Aktivitäten pro Tag
+> - Pufferzeit für spontane Entdeckungen einplanen
+> - Lokale Restaurants statt Touristenfallen
+>
+> **Ausgabeformat:**
+> Tag 1: [Ort]
+> - Vormittag: [Aktivität] - [Warum empfohlen]
+> - Mittag: [Restaurant-Tipp] - [Spezialität]
+> - Nachmittag: [Aktivität]
+> - Abend: [Empfehlung]
+
+**Werkzeuge:** Web-Suche, Reiseführer-Datenbanken
+
+---
+
+#### Agent 5: Der Reise-Koordinator (Orchestrator)
+
+**Rolle:** Führt alles zusammen und erstellt den finalen Plan.
+
+**System-Prompt (vereinfacht):**
+> Du bist ein erfahrener Reiseplaner, der alle Teilpläne zu einem stimmigen Ganzen verbindet.
+>
+> **Deine Aufgaben:**
+> 1. Prüfe die Ergebnisse der anderen Agenten auf Konsistenz
+> 2. Stelle sicher, dass das Budget eingehalten wird
+> 3. Optimiere die Reihenfolge (logische Reiseroute)
+> 4. Identifiziere Konflikte (z.B. Hotel zu weit von Aktivitäten)
+> 5. Erstelle den finalen, buchbaren Reiseplan
+>
+> **Qualitätsstandards:**
+> - Gesamtbudget darf nicht überschritten werden
+> - Keine unrealistischen Transfers zwischen Orten
+> - Alle Buchungen müssen zum Zeitpunkt passen
+>
+> **Ausgabeformat:**
+> ## Reiseübersicht
+> [Zusammenfassung]
+>
+> ## Budget-Aufstellung
+> - Flüge: X€
+> - Unterkünfte: X€
+> - Aktivitäten: X€
+> - Puffer: X€
+> - **Gesamt: X€**
+>
+> ## Detailplan
+> [Tag-für-Tag-Plan]
+>
+> ## Buchungsschritte
+> [Was zuerst buchen, Links]
+
+**Werkzeuge:** Lesen (Ergebnisse der anderen Agenten), Schreiben (finaler Plan)
+
+---
+
+### Der Ablauf: So arbeiten die Agenten zusammen
+
+```
+Anfrage: "Plane Italien-Urlaub..."
+           │
+           ▼
+    ┌──────────────┐
+    │ Reise-Analyst │ ──→ Parameter & Prioritäten
+    └──────────────┘
+           │
+           ▼
+    ┌──────────────────────────────────────┐
+    │         PARALLEL AUSFÜHRUNG           │
+    │                                        │
+    │  ┌─────────────┐  ┌─────────────────┐ │
+    │  │Flug-Spezialist│  │Unterkunfts-Experte│ │
+    │  └─────────────┘  └─────────────────┘ │
+    │         │                  │          │
+    │  ┌─────────────────────────┐          │
+    │  │  Aktivitäten-Kurator    │          │
+    │  └─────────────────────────┘          │
+    └──────────────────────────────────────┘
+           │
+           ▼
+    ┌──────────────────┐
+    │ Reise-Koordinator │ ──→ Finaler Plan
+    └──────────────────┘
+           │
+           ▼
+    Fertiger Reiseplan mit Budget
+```
+
+### Warum funktioniert das?
+
+| Prinzip | Umsetzung im Beispiel |
+|---------|----------------------|
+| **Spezialisierung** | Jeder Agent ist Experte für einen Bereich |
+| **Parallelisierung** | Flug, Hotel und Aktivitäten werden gleichzeitig recherchiert |
+| **Minimale Rechte** | Analyse-Agent hat keine Schreibrechte |
+| **Qualitätskontrolle** | Koordinator prüft auf Konsistenz und Budget |
+| **Klare Ausgabeformate** | Jeder Agent liefert strukturierte Ergebnisse |
+
+### Das Ergebnis
+
+Statt eines generischen Reiseplans erhält man:
+- **Durchdachte Flugauswahl** mit Preisvergleich
+- **Authentische Unterkünfte** statt Kettenhotels
+- **Lokale Geheimtipps** statt Touristenfallen
+- **Realistischer Tagesablauf** ohne Überforderung
+- **Budget-Transparenz** mit Puffer für Spontanes
+
+### Zum Nachbauen
+
+Dieses System lässt sich mit aktuellen KI-Tools umsetzen:
+- Jeder Agent = ein separater Chat mit spezifischem System-Prompt
+- Orchestrierung = manuell oder per Automatisierung (z.B. mit n8n, Make)
+- Parallel-Ausführung = mehrere API-Calls gleichzeitig
+
+Der Aufwand lohnt sich besonders bei:
+- Wichtigen Reisen (Hochzeitsreise, Jubiläum)
+- Komplexen Routen (mehrere Länder/Städte)
+- Speziellen Anforderungen (Barrierefreiheit, Ernährung)
+
+---
+
 ## Was können wir daraus lernen?
 
 ### Für Unternehmen:
