@@ -68,6 +68,57 @@ Das bedeutet:
 
 ---
 
+## Single-Agent vs. Multi-Agent: Wann was?
+
+Eine wichtige Frage: Braucht man immer mehrere Agenten? Die Antwort ist: Nein.
+
+### Wann ein einzelner Agent besser ist
+
+Nicht jede Aufgabe braucht ein ganzes Team. Ein einzelner Agent ist oft die bessere Wahl bei:
+
+- **Einfachen, klar definierten Aufgaben** - Ein Bugfix in einer Zeile braucht kein Expertenteam
+- **Dringenden Änderungen** - Hotfixes profitieren von schneller, direkter Ausführung
+- **Trivialen Anpassungen** - Kleine Textänderungen oder Konfigurationsanpassungen
+
+### Die versteckten Kosten von Multi-Agent
+
+Mehrere Agenten bedeuten auch:
+
+| Aspekt | Nachteil bei Multi-Agent |
+|--------|--------------------------|
+| **Koordination** | Agenten müssen synchronisiert werden |
+| **Latenz** | Orchestrierung kostet Zeit |
+| **Komplexität** | Mehr Fehlerquellen beim Zusammenspiel |
+| **Kontextverlust** | Informationen können zwischen Agenten verloren gehen |
+| **Debugging** | Schwerer nachzuvollziehen, was schief ging |
+
+### Die Faustregel aus der Praxis
+
+Claude Code empfiehlt diese Staffelung:
+
+| Projektgröße | Empfohlene Agentenzahl |
+|--------------|------------------------|
+| Einfach | 2 Agenten |
+| Mittel | 3 Agenten |
+| Standard | 4 Agenten |
+| Groß | 6 Agenten |
+| Komplex | 8 Agenten |
+
+### Wann Multi-Agent sich lohnt
+
+Multi-Agent macht Sinn, wenn:
+- **Mehrere Dateien** betroffen sind
+- **Architekturentscheidungen** getroffen werden müssen
+- **Anforderungen unklar** sind und verschiedene Perspektiven helfen
+- **Unabhängige Prüfungen** gewünscht sind (Qualitätssicherung durch Redundanz)
+- **Parallelisierung** die Geschwindigkeit erhöht
+
+### Das Fazit zur Agent-Anzahl
+
+Die richtige Anzahl von Agenten ist wie bei einem Projektteam: So wenig wie möglich, so viele wie nötig. Ein Alleskönner für einfache Aufgaben, ein Spezialistenteam für komplexe Herausforderungen.
+
+---
+
 ## Was können wir daraus lernen?
 
 ### Für Unternehmen:
